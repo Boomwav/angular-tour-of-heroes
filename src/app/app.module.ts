@@ -17,6 +17,8 @@ import { HeroSearchComponent } from './hero-search.component';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+
 
 
 
@@ -34,7 +36,8 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
     }),
     ButtonsModule,
     BrowserAnimationsModule,
-    DialogsModule
+    DialogsModule,
+    LayoutModule
   ],
   declarations: [
     AppComponent,
