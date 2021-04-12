@@ -2,7 +2,7 @@
 <div class="infobox">
   <p>Hello Alyssa! I added a working confirmation dialog in the HEROES section so when you try to delete a hero, it will ask for a confirmation!</p>
   <p>The search at the bottom of the dashboard was changed as well!</p>
-  <p>I guess you also noticed the chat area! You can write a hero name in it and it will add it to the Tour of Heroes. If it already exist, it will tell you too. I used the "kendo-chat" component to do it. It was WAYYYY TOOO fun to do. I had a hard time stopping.</p>
+  <p>I guess you also noticed the chat area! You can write a hero name in it and it will add it to the Tour of Heroes. If it already exist, it will even tell you! I used the "kendo-chat" component to do it. It was WAYYYY TOOO fun to do. I had a hard time stopping.</p>
 </div>
 
 <h3>Top Heroes</h3>
@@ -41,18 +41,20 @@
   </div>
 </div>
 
+<hr />
+
 <my-hero-search></my-hero-search>
 
 <hr />
 
 <p>Testing the dialog here! Also fully working in the Heroes section.</p>
 
-<button kendoButton *ngIf="!opened" (click)="open()">Open dialog test</button>
-<kendo-dialog title="Please confirm" *ngIf="opened" (close)="close('cancel')" [minWidth]="250" [width]="450">
-    <p style="margin: 30px; text-align: center;">Are you sure you want to continue?</p>
+<button kendoButton *ngIf="!opened" (click)="open()" look="outline" icon="error">Very important question!</button>
+<kendo-dialog title="Very important question" *ngIf="opened" (close)="close('cancel')" [minWidth]="250" [width]="450">
+    <p style="margin: 30px; text-align: center;">Should we add Wolverine to the list?</p>
     <kendo-dialog-actions>
-        <button kendoButton (click)="close('no')">No</button>
-        <button kendoButton (click)="close('yes')" primary="true">Yes</button>
+        <button kendoButton (click)="close('no')">No bub.</button>
+        <button kendoButton (click)="close('yes')" primary="true">Hell yes!</button>
     </kendo-dialog-actions>
 </kendo-dialog>
 

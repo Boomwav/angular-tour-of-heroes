@@ -37,6 +37,11 @@ export class DashboardComponent implements OnInit {
 
   public close(status) {
       console.log(`Dialog result: ${status}`);
+      if(status == "yes") {
+        this.heroService.save({id: null, name: "Wolverine", scrollViewItems: []}).subscribe(x => {
+          console.log(`${x.name} was added.`);
+        });
+      }
       this.opened = false;
   }
 

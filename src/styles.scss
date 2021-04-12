@@ -18,10 +18,11 @@ body {
 }
 
 .k-textbox-container:focus-within > .k-label, .k-floating-label-container:focus-within > .k-label {
-  left: 0px !important;
+  left: 50px !important;
   top: -10px;
   transition: ease 2s;
   transform: scale(2) rotate(2turn);
+  transform-origin: center center;
 }
 
 .chat {
