@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
+import { Orientation, ActionsLayout } from '@progress/kendo-angular-layout';
 
 @Component({
   selector: 'my-dashboard',
@@ -11,6 +12,9 @@ import { HeroService } from './hero.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+
+  public actionsOrientation: Orientation = 'horizontal';
+  public actionsLayout: ActionsLayout = 'end';
 
   constructor(
     private router: Router,

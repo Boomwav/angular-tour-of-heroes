@@ -18,6 +18,8 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { LayoutModule } from '@progress/kendo-angular-layout';
+import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+
 
 
 
@@ -37,7 +39,8 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
     ButtonsModule,
     BrowserAnimationsModule,
     DialogsModule,
-    LayoutModule
+    LayoutModule,
+    ScrollViewModule
   ],
   declarations: [
     AppComponent,
