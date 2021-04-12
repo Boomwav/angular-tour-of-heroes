@@ -5,6 +5,7 @@ import { Hero } from './hero';
 import { HeroService } from './hero.service';
 import { Orientation, ActionsLayout } from '@progress/kendo-angular-layout';
 
+
 @Component({
   selector: 'my-dashboard',
   templateUrl: './dashboard.component.html',
@@ -19,6 +20,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private router: Router,
     private heroService: HeroService) {
+
   }
 
   ngOnInit(): void {
@@ -41,4 +43,6 @@ export class DashboardComponent implements OnInit {
   public open() {
       this.opened = true;
   }
+
+
 }

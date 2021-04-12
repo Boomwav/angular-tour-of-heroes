@@ -1,6 +1,13 @@
+
+<div class="">
+  <p>Hello Alyssa! I added a working confirmation dialog in the HEROES section so when you try to delete a hero, it will ask for a confirmation!</p>
+  <p>The search at the bottom of the dashboard was changed as well!</p>
+  <p>I guess you also noticed the chat area! You can write a hero name in it and it will add it to the Tour of Heroes. If it already exist, it will tell you too. I used the "kendo-chat" component to do it. It was WAYYYY TOOO fun to do. I had a hard time stopping.</p>
+</div>
+
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
-  <p>Hello Alyssa! I added a working confirmation dialog in the HEROES section so when you try to delete a hero, it will ask for a confirmation!</p>
+
   <div *ngFor="let hero of heroes" class="col-1-4">
 
       <kendo-card [width]="'260px'">
@@ -52,3 +59,5 @@
         <button kendoButton (click)="close('yes')" primary="true">Yes</button>
     </kendo-dialog-actions>
 </kendo-dialog>
+
+<my-chat></my-chat>

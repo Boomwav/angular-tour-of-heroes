@@ -21,6 +21,11 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { InputsModule } from '@progress/kendo-angular-inputs';
+import { ChatModule } from '@progress/kendo-angular-conversational-ui';
+import { ChatComponent } from './chat/chat.component';
+import { ChatService } from './chat.service';
+import { HeroSearchService } from './hero-search.service';
+
 
 
 
@@ -46,7 +51,8 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
     LayoutModule,
     ScrollViewModule,
     LabelModule,
-    InputsModule
+    InputsModule,
+    ChatModule
   ],
   declarations: [
     AppComponent,
@@ -54,8 +60,9 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
     HeroSearchComponent,
     HeroesComponent,
     HeroDetailComponent,
+    ChatComponent,
   ],
-  providers: [HeroService],
+  providers: [HeroService, ChatService, HeroSearchService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

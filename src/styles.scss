@@ -5,7 +5,7 @@
 
 h2 { color: #444; font-weight: lighter; }
 body { margin: 2em; }
-body, input[text], button { color: #888; font-family: Cambria, Georgia; }
+body, input[text], button { color: #333; font-family: Cambria, Georgia; }
 button { padding: 0.2em; font-size: 14px}
 * { font-family: Arial; }
 
@@ -22,6 +22,21 @@ body {
   top: -10px;
   transition: ease 2s;
   transform: scale(2) rotate(2turn);
+}
+
+.chat {
+  position:absolute;
+  bottom:0;
+  right:0;
+  z-index: 999;
+}
+
+.infobox {
+  margin-top: 15px;
+  padding: 15px;
+  color: #333;
+  background-color: $mars-blue;
+  border: 2px solid #000;
 }
 
 
