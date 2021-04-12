@@ -14,6 +14,12 @@ import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroSearchComponent } from './hero-search.component';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogsModule } from '@progress/kendo-angular-dialog';
+
+
+
 
 @NgModule({
   imports: [
@@ -25,7 +31,10 @@ import { HeroSearchComponent } from './hero-search.component';
       dataEncapsulation: false,
       delay: 300,
       passThruUnknownUrl: true
-    })
+    }),
+    ButtonsModule,
+    BrowserAnimationsModule,
+    DialogsModule
   ],
   declarations: [
     AppComponent,

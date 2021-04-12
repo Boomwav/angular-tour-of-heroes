@@ -5,9 +5,18 @@
     <span class="hero-element">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </span>
-    <button class="delete-button" (click)="deleteHero(hero, $event)">Delete</button>
+    <button class="delete-button" kendoButton *ngIf="!opened" (click)="open(hero)">Delete</button>
+
   </li>
 </ul>
+
+<kendo-dialog [title]="" *ngIf="opened" (close)="close('cancel')" [minWidth]="250" [width]="450">
+  <p style="margin: 30px; text-align: center;">Are you sure you want to delete this {{selectedHero.name}} ?</p>
+  <kendo-dialog-actions>
+      <button kendoButton (click)="closeDialog(false)">No</button>
+      <button kendoButton (click)="closeDialog(true, selectedHero)" primary="true">Yes</button>
+  </kendo-dialog-actions>
+</kendo-dialog>
 
 <div class="error" *ngIf="error">{{error}}</div>
 <button (click)="addHero()">Add New Hero</button>

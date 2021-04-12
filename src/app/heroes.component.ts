@@ -6,7 +6,7 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
@@ -15,7 +15,23 @@ export class HeroesComponent implements OnInit {
   error: any;
   showNgFor = false;
 
+  public opened = false;
+
   constructor(private router: Router, private heroService: HeroService) {}
+
+  public closeDialog(status, hero) {
+    console.log(`Dialog result: ${status}`);
+    this.opened = false;
+
+    if(status) {
+      this.deleteHero(hero);
+    }
+  }
+
+  public open(hero) {
+    this.opened = true;
+    this.selectedHero = hero;
+  }
 
   getHeroes(): void {
     this.heroService
@@ -38,8 +54,8 @@ export class HeroesComponent implements OnInit {
     }
   }
 
-  deleteHero(hero: Hero, event: any): void {
-    event.stopPropagation();
+  deleteHero(hero: Hero): void {
+    console.log('delete hero ' + hero);
     this.heroService.delete(hero).subscribe(res => {
       this.heroes = this.heroes.filter(h => h !== hero);
       if (this.selectedHero === hero) {

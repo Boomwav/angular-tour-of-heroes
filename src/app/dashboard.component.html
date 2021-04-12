@@ -1,9 +1,19 @@
 <h3>Top Heroes</h3>
 <div class="grid grid-pad">
+  <p>Hello Alyssa! I added a working confirmation dialog in the HEROES section so when you try to delete a hero, it will ask for a confirmation!</p>
   <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
     <div class="module hero">
       <h4>{{hero.name}}</h4>
     </div>
   </div>
 </div>
+
+<button kendoButton *ngIf="!opened" (click)="open()">Open dialog</button>
+<kendo-dialog title="Please confirm" *ngIf="opened" (close)="close('cancel')" [minWidth]="250" [width]="450">
+    <p style="margin: 30px; text-align: center;">Are you sure you want to continue?</p>
+    <kendo-dialog-actions>
+        <button kendoButton (click)="close('no')">No</button>
+        <button kendoButton (click)="close('yes')" primary="true">Yes</button>
+    </kendo-dialog-actions>
+</kendo-dialog>
 <my-hero-search></my-hero-search>

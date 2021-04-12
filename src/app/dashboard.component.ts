@@ -7,7 +7,7 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
@@ -25,5 +25,16 @@ export class DashboardComponent implements OnInit {
   gotoDetail(hero: Hero): void {
     const link = ['/detail', hero.id];
     this.router.navigate(link);
+  }
+
+  public opened = false;
+
+  public close(status) {
+      console.log(`Dialog result: ${status}`);
+      this.opened = false;
+  }
+
+  public open() {
+      this.opened = true;
   }
 }
