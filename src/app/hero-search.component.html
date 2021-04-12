@@ -1,6 +1,15 @@
 <div id="search-component">
   <h4>Hero Search</h4>
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <p>The searchbox now use kendo-floatingLabel and kendo-textbox with a customized animation.. :)</p>
+  <kendo-floatinglabel text="Hero Search">
+    <kendo-textbox #searchBox [clearButton]="true" (valueChange)="search(searchBox.value)" >
+        <ng-template kendoTextBoxPrefixTemplate>
+                <button type="submit" kendoButton look="clear" [icon]="'search'" (click)="search(searchBox.value)"></button>
+            <kendo-textbox-separator></kendo-textbox-separator>
+        </ng-template>
+    </kendo-textbox>
+  </kendo-floatinglabel>
+
   <div>
     <div *ngFor="let hero of heroes | async"
          (click)="gotoDetail(hero)" class="search-result" >

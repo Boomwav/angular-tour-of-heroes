@@ -13,4 +13,17 @@ body {
     background-color: $base-color;
 }
 
+.k-textbox-container.k-state-empty > .k-label, .k-floating-label-container.k-state-empty > .k-label {
+  left: 40px !important;
+}
+
+.k-textbox-container:focus-within > .k-label, .k-floating-label-container:focus-within > .k-label {
+  left: 0px !important;
+  top: -10px;
+  transition: ease 2s;
+  transform: scale(2) rotate(2turn);
+}
+
+
+
 
