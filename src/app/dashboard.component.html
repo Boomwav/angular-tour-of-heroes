@@ -2,13 +2,26 @@
 <div class="grid grid-pad">
   <p>Hello Alyssa! I added a working confirmation dialog in the HEROES section so when you try to delete a hero, it will ask for a confirmation!</p>
   <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
-    </div>
+
+      <kendo-card [width]="'260px'">
+        <kendo-card-header class="k-hbox" style="cursor: pointer;">
+            <kendo-avatar width="40px" height="40px" [imageSrc]="'https://picsum.photos/seed/' + hero.name + '/100'" [shape]="'circle'">{{hero.name.substr(0,1)}}</kendo-avatar>
+            <div>
+                <h1 kendoCardTitle>{{ hero.name }}</h1>
+                <p kendoCardSubtitle>{{ hero.name }} is the real deal!</p>
+            </div>
+        </kendo-card-header>
+    </kendo-card>
   </div>
 </div>
 
-<button kendoButton *ngIf="!opened" (click)="open()">Open dialog</button>
+<my-hero-search></my-hero-search>
+
+<hr />
+
+<p>Testing the dialog here! Also fully working in the Heroes section.</p>
+
+<button kendoButton *ngIf="!opened" (click)="open()">Open dialog test</button>
 <kendo-dialog title="Please confirm" *ngIf="opened" (close)="close('cancel')" [minWidth]="250" [width]="450">
     <p style="margin: 30px; text-align: center;">Are you sure you want to continue?</p>
     <kendo-dialog-actions>
@@ -16,4 +29,3 @@
         <button kendoButton (click)="close('yes')" primary="true">Yes</button>
     </kendo-dialog-actions>
 </kendo-dialog>
-<my-hero-search></my-hero-search>
